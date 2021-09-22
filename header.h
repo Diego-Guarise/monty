@@ -2,7 +2,8 @@
 #define HEADER_H
 
 /* Libraries */
-
+#include <fcntl.h>
+#include <unistd.h>
 /* Funtions prototypes */
 
 /**
