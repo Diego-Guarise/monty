@@ -1,14 +1,18 @@
 #include "header.h"
+
+stack_t **global_head;
 /**
  *
  */
 
 int main(int argc, char* argv[])
 {
-  char* line, tok1, tok2;
+  char *line, *tok1, *tok2;
   FILE *fp;
+  unsigned int i = 0;
   size_t len = 0;
   ssize_t read;
+  stack_t *head = NULL;
 
   if (argc != 2)
   {
@@ -24,11 +28,13 @@ int main(int argc, char* argv[])
     return (EXIT_FAILURE);
   }
 
+  global_head = &head;
   while ((read = getline(&line, &len, fp)) != -1)
   {
-    tok1 = strtok(line, " \t\n");
-    tok2 = strtok(NULL, " \t\n");
-
+    tok1 = strtok(line, " ");
+    tok2 = strtok(NULL, " ");
+    compare(global_head, tok1, i);
+    i++;
   }
 
   fclose(fp);
