@@ -30,11 +30,10 @@ int main(int argc, char* argv[])
   while ((read = getline(&line, &len, fp)) != -1)
   {
     tok1 = strtok(line, " ");
-    tok2 = strtok(NULL, " ");
+    tok2 = strtok(NULL, " \n\t");
     compare(global_head, tok1, i);
     i++;
-    printf("hola");
-  }
+   }
 
   fclose(fp);
 exit(EXIT_SUCCESS);

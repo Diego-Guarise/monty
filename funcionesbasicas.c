@@ -7,17 +7,27 @@
 void push(stack_t **stack, unsigned int number)
 {
 	  stack_t *node;
-
-	  node = malloc(sizeof(node));
+	  if(!stack)
+	    return (0);
+	  node = malloc(sizeof(stack_t));
 	  if (!node)
 	    {
-	      free(stack);
+	      free(node);
 	      exit(EXIT_FAILURE);
 	    }
+	  node->n = 3;
 	  node->next = *stack;
 	  node->prev = NULL;
-	  *stack = node;
-	}
+	  if (*stack)
+	    {
+	      (stack)->prev = node;
+	    }
+	  else
+	    {
+	      stack = node;
+	    }
+	  printf("asdasd");
+}
 
 /**
  *
