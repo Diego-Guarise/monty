@@ -4,7 +4,7 @@
  *
  */
 
-void push(int num)
+void push(size_t **head, unsigned int number , char *tok2)
 {
 	int stack[LIMIT], top, element;
 
