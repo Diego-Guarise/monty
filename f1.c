@@ -9,7 +9,6 @@ void compare(stack_t **global_head, char *tok1, unsigned int number)
   instruction_t op[] = {
     {"push", push},
     {"pall", pall},
-    {"pop", pop},
     {NULL, NULL}
   };
   while (op[i].opcode)

@@ -9,8 +9,7 @@
 #include <string.h>
 #include <sys/types.h>
 #include <limits.h>
-/* Funtions prototypes */
-void compare(char *tok1);
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -41,4 +40,8 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+/* Functions */
+void compare(stack_t **global, char *tok1, unsigned int number);
+void push(int num)
+void pall()
 #endif

@@ -1,6 +1,5 @@
 #include "header.h"
 
-stack_t **global_head;
 /**
  *
  */
@@ -12,7 +11,7 @@ int main(int argc, char* argv[])
   unsigned int i = 0;
   size_t len = 0;
   ssize_t read;
-  stack_t *head = NULL;
+  stack_t *head = NULL, **global_head = &head;
 
   if (argc != 2)
   {
@@ -28,7 +27,6 @@ int main(int argc, char* argv[])
     return (EXIT_FAILURE);
   }
 
-  global_head = &head;
   while ((read = getline(&line, &len, fp)) != -1)
   {
     tok1 = strtok(line, " ");
