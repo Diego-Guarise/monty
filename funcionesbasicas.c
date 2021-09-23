@@ -15,7 +15,7 @@ void push(size_t **head, unsigned int number , char *tok2)
 		/* insertar nodo */
 		top++;
 		stack[top] = element;
-	}
+	asd}
 }
 
 /**
