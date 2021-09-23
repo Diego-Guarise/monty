@@ -4,19 +4,20 @@
  *
  */
 
-void push(size_t **head, unsigned int number , char *tok2)
+void push(stack_t **stack, unsigned int number)
 {
-	int stack[LIMIT], top, element;
+	  stack_t *node;
 
-	if (top == LIMIT - 1)
-		printf("Stack Overflow\n");
-	else
-	{
-		/* insertar nodo */
-		top++;
-		stack[top] = element;
-	asd}
-}
+	  node = malloc(sizeof(node));
+	  if (!node)
+	    {
+	      free(stack);
+	      exit(EXIT_FAILURE);
+	    }
+	  node->next = *stack;
+	  node->prev = NULL;
+	  *stack = node;
+	}
 
 /**
  *

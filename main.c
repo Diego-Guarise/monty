@@ -33,6 +33,7 @@ int main(int argc, char* argv[])
     tok2 = strtok(NULL, " ");
     compare(global_head, tok1, i);
     i++;
+    printf("hola");
   }
 
   fclose(fp);

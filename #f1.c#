@@ -8,7 +8,7 @@ void compare(stack_t **global_head, char *tok1, unsigned int number)
 
   instruction_t op[] = {
     {"push", push},
-    /*   {"pall", pall},*/
+    {"pall", pall},
     {NULL, NULL}
   };
   while (op[i].opcode)
@@ -20,10 +20,10 @@ void compare(stack_t **global_head, char *tok1, unsigned int number)
     }
     i++;
   }
-  if (strlen(tok1) == '\n' || tok1[0] == '#')
+  if (strlen(tok) == '\n' || tok[0] == '#')
   {
     fprintf(stderr, "L%u: unknown instruction %s", number, tok1);
-    free(tok1);
+    free(tok);
     exit(EXIT_FAILURE);
   }
 }
