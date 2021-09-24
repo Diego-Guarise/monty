@@ -8,7 +8,7 @@ void compare(stack_t **global_head, char *tok1, unsigned int number)
 
   instruction_t op[] = {
     {"push", push},
-    /* {"pall", pall},*/
+    {"pall", pall},
     {NULL, NULL}
   };
   while (op[i].opcode)
@@ -16,7 +16,7 @@ void compare(stack_t **global_head, char *tok1, unsigned int number)
     if (strcmp(tok1, op[i].opcode) == 0)
     {
       op[i].f(global_head, number);
-      break;
+      return;
     }
     i++;
   }

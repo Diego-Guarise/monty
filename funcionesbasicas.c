@@ -8,43 +8,27 @@ void push(stack_t **stack, unsigned int number)
 {
 	  stack_t *node;
 	  if(!stack)
-	    return (0);
 	  node = malloc(sizeof(stack_t));
 	  if (!node)
 	    {
 	      free(node);
 	      exit(EXIT_FAILURE);
 	    }
-	  node->n = 3;
+	  node->n = number;
 	  node->next = *stack;
 	  node->prev = NULL;
-	  if (*stack)
-	    {
-	      (stack)->prev = node;
-	    }
-	  else
-	    {
-	      stack = node;
-	    }
-	  printf("asdasd");
+	  *stack = node;
 }
 
 /**
  *
  */
-void pop(int num)
+void pall(stack_t **stack, unsigned int number)
 {
-	int stack[LIMIT], top, element;
-	
-	if(top == -1)
-		printf("Stack underflow\n");
-	else
-	{
-		/* arreglar nodo anterior?*/
-		element=stack[top];
-		printf("The deleted item is %d\n",stack[top]);
-		top--; // The element below the topmost element is deleted
-	}
+  stack_t *iter = *stack;
+  while (iter)
+    {
+      printf("%d\n", iter->n);
+	iter = iter->next;
+    }
 }
-
-
